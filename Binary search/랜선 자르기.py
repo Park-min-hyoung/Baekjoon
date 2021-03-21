@@ -18,10 +18,7 @@ def binary_search(lan, start, end):
 
 
 k, n = map(int, stdin.readline().split())
-
-lan = []
-for i in range(k):
-    lan.append(int(input()))
+lan = list(int(stdin.readline()) for _ in range(k))
 
 print(binary_search(lan, 1, max(lan)))
 
@@ -31,7 +28,8 @@ print(binary_search(lan, 1, max(lan)))
 1. 랜선의 길이를 기준으로 start 점은 1로 두고 end 점은 주어진 랜선의 최대값을 가지고 이분 탐색을 해 필요한 랜선의 길이를 만족하는 최대 mid 값을 출력하면 된다.
 2. 필요한 랜선의 개수 보다 랜선이 많거나 같다면 start = mid + 1을 해주고 랜선이 적다면 end = mid - 1을 해준다
 3. 필요한 랜선의 개수 보다 랜선이 많거나 같다는 가정하에 이전과 같은 상황을 비교해 봤을 때 갈수록 값이 커지므로 제일 마지막 값이 최대 값이다.
-4. 반복이 계속 될수록 필요한 랜선의 개수와 만든 랜선의 개수가 같다는 것이 신기하기도 하다(내가 아직 이진 탐색을 완벽하게 이해를 하지 못한 것 같다)
+4. 반복이 계속 될수록 필요한 랜선의 개수와 만든 랜선의 개수가 같은 이유는 필요한 랜선의 개수가 만든 랜선의 개수보다 많은 경우에서 
+한번 같은게 나오면 mid가 증가 하기때문에 같아질 수 밖에 없다.(mid가 증가하면 만든 랜선의 개수는 작아지는데 그것은 밑에 조건으로 가므로 같을때만 들어온다)
 5. li = list(map(int, stdin.readlines()))를 통해 여러줄을 입력받을 수 있음'''
 
 '''문제
